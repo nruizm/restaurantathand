@@ -13,6 +13,7 @@ import co.unicauca.restaurantathand.commons.domain.Restaurant;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -50,160 +51,111 @@ public class GUIRegistrationRest extends javax.swing.JFrame {
         lblAddressRest = new java.awt.Label();
         lblMobileRest = new java.awt.Label();
         lblEmailRest = new java.awt.Label();
-        lblIdAdminRest = new java.awt.Label();
-        txtNitRest = new java.awt.TextField();
-        txtNameRest = new java.awt.TextField();
-        txtAddressRest = new java.awt.TextField();
-        txtMobileRest = new java.awt.TextField();
-        txtEmailRest = new java.awt.TextField();
-        txtIdAdminRest = new java.awt.TextField();
         btnRegistrarRest = new javax.swing.JButton();
-        btnBuscarRest = new javax.swing.JButton();
-        jLbLogo = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        txtNitRest = new javax.swing.JTextField();
+        txtNameRest = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        txtAddressRest = new javax.swing.JTextField();
+        txtMobileRest = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        txtEmailRest = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        lblCheckIn = new javax.swing.JLabel();
+        btnAtras = new javax.swing.JButton();
+        lblCiudadRest = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        txtCiudad = new javax.swing.JTextField();
+        pnlColorRegistrar = new javax.swing.JPanel();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlRegistroRest.setBackground(new java.awt.Color(255, 255, 255));
+        pnlRegistroRest.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblNitRest.setForeground(new java.awt.Color(102, 102, 102));
         lblNitRest.setText("Nit:");
+        pnlRegistroRest.add(lblNitRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 41, 20));
+        lblNitRest.getAccessibleContext().setAccessibleName("lblNitRest");
 
-        lblNameRest.setText("Nombre:");
+        lblNameRest.setForeground(new java.awt.Color(102, 102, 102));
+        lblNameRest.setText("Name:");
+        pnlRegistroRest.add(lblNameRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, 20));
+        lblNameRest.getAccessibleContext().setAccessibleName("lblNameRest");
 
-        lblAddressRest.setText("Direccion:");
+        lblAddressRest.setForeground(new java.awt.Color(102, 102, 102));
+        lblAddressRest.setText("Address:");
+        pnlRegistroRest.add(lblAddressRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, 20));
+        lblAddressRest.getAccessibleContext().setAccessibleName("lblAddressRest");
 
-        lblMobileRest.setText("Telefono:");
+        lblMobileRest.setForeground(new java.awt.Color(102, 102, 102));
+        lblMobileRest.setText("Phone:");
+        pnlRegistroRest.add(lblMobileRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 20));
+        lblMobileRest.getAccessibleContext().setAccessibleName("lblMobileRest");
 
-        lblEmailRest.setText("Correo:");
+        lblEmailRest.setForeground(new java.awt.Color(102, 102, 102));
+        lblEmailRest.setText("Email:");
+        pnlRegistroRest.add(lblEmailRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, 20));
+        lblEmailRest.getAccessibleContext().setAccessibleName("lblEmailRest");
 
-        lblIdAdminRest.setText("Id Administrador:");
-
-        btnRegistrarRest.setText("REGISTRAR");
+        btnRegistrarRest.setText("Check In");
         btnRegistrarRest.setName("REGISTRAR"); // NOI18N
         btnRegistrarRest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarRestActionPerformed(evt);
             }
         });
-
-        btnBuscarRest.setText("BUSCAR");
-        btnBuscarRest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarRestActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlRegistroRestLayout = new javax.swing.GroupLayout(pnlRegistroRest);
-        pnlRegistroRest.setLayout(pnlRegistroRestLayout);
-        pnlRegistroRestLayout.setHorizontalGroup(
-            pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlRegistroRestLayout.createSequentialGroup()
-                .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegistroRestLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblMobileRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblEmailRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAddressRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNameRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNitRest, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40))
-                    .addGroup(pnlRegistroRestLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRegistrarRest)
-                            .addComponent(lblIdAdminRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)))
-                .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlRegistroRestLayout.createSequentialGroup()
-                        .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEmailRest, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIdAdminRest, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMobileRest, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscarRest))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnlRegistroRestLayout.createSequentialGroup()
-                        .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAddressRest, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNitRest, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNameRest, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                        .addComponent(jLbLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))))
-        );
-        pnlRegistroRestLayout.setVerticalGroup(
-            pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlRegistroRestLayout.createSequentialGroup()
-                .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlRegistroRestLayout.createSequentialGroup()
-                        .addContainerGap(53, Short.MAX_VALUE)
-                        .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNitRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNitRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(22, 22, 22)
-                        .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNameRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNameRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAddressRest, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAddressRest, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28))
-                    .addGroup(pnlRegistroRestLayout.createSequentialGroup()
-                        .addComponent(jLbLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegistroRestLayout.createSequentialGroup()
-                        .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblMobileRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMobileRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlRegistroRestLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(lblEmailRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlRegistroRestLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(txtEmailRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(21, 21, 21)
-                        .addComponent(lblIdAdminRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtIdAdminRest, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72)
-                .addGroup(pnlRegistroRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrarRest)
-                    .addComponent(btnBuscarRest))
-                .addGap(62, 62, 62))
-        );
-
-        lblNitRest.getAccessibleContext().setAccessibleName("lblNitRest");
-        lblNameRest.getAccessibleContext().setAccessibleName("lblNameRest");
-        lblAddressRest.getAccessibleContext().setAccessibleName("lblAddressRest");
-        lblMobileRest.getAccessibleContext().setAccessibleName("lblMobileRest");
-        lblEmailRest.getAccessibleContext().setAccessibleName("lblEmailRest");
-        lblIdAdminRest.getAccessibleContext().setAccessibleName("lblIdAdmiRest");
-        txtNitRest.getAccessibleContext().setAccessibleName("txtNitRest");
-        txtNameRest.getAccessibleContext().setAccessibleName("txtNameRest");
-        txtAddressRest.getAccessibleContext().setAccessibleName("txtAddressRest");
-        txtMobileRest.getAccessibleContext().setAccessibleName("txtMobileRest");
-        txtEmailRest.getAccessibleContext().setAccessibleName("txtEmailRest");
-        txtIdAdminRest.getAccessibleContext().setAccessibleName("txtIdAdminRest");
+        pnlRegistroRest.add(btnRegistrarRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 100, 30));
         btnRegistrarRest.getAccessibleContext().setAccessibleName("btnRegistrarRest");
         btnRegistrarRest.getAccessibleContext().setAccessibleDescription("");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlRegistroRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(598, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(pnlRegistroRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(279, Short.MAX_VALUE))
-        );
+        pnlRegistroRest.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 200, 10));
+
+        txtNitRest.setBorder(null);
+        pnlRegistroRest.add(txtNitRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 200, 20));
+
+        txtNameRest.setBorder(null);
+        pnlRegistroRest.add(txtNameRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 190, 20));
+        pnlRegistroRest.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 200, 10));
+        pnlRegistroRest.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 200, 10));
+
+        txtAddressRest.setBorder(null);
+        pnlRegistroRest.add(txtAddressRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 180, 20));
+
+        txtMobileRest.setBorder(null);
+        pnlRegistroRest.add(txtMobileRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 190, 20));
+        pnlRegistroRest.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 200, 10));
+
+        txtEmailRest.setBorder(null);
+        pnlRegistroRest.add(txtEmailRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 190, 20));
+        pnlRegistroRest.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 200, 10));
+        pnlRegistroRest.add(lblCheckIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 200, 110));
+
+        btnAtras.setBackground(new java.awt.Color(255, 255, 255));
+        btnAtras.setForeground(new java.awt.Color(102, 102, 102));
+        btnAtras.setText("Back");
+        btnAtras.setBorder(null);
+        pnlRegistroRest.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 20));
+
+        lblCiudadRest.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblCiudadRest.setForeground(new java.awt.Color(102, 102, 102));
+        lblCiudadRest.setText("City:");
+        pnlRegistroRest.add(lblCiudadRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 250, 50, 20));
+        pnlRegistroRest.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 200, 10));
+
+        txtCiudad.setBorder(null);
+        pnlRegistroRest.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 200, -1));
+
+        getContentPane().add(pnlRegistroRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 440, 440));
+
+        pnlColorRegistrar.setBackground(new java.awt.Color(255, 255, 255));
+        pnlColorRegistrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlColorRegistrar.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 440));
+
+        getContentPane().add(pnlColorRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -232,26 +184,7 @@ public class GUIRegistrationRest extends javax.swing.JFrame {
             successMessage(ex.getMessage(), "Atención");
         }
     }//GEN-LAST:event_btnRegistrarRestActionPerformed
-
-    private void btnBuscarRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRestActionPerformed
-        String nit = txtNitRest.getText().trim();
-        IRestaurantAccess service = Factory.getInstance().getRestaurantService();
-        
-        RestaurantService objRestaurantService = new RestaurantService(service);
-        Restaurant objRestaurant;
-        try
-        {
-            objRestaurant = objRestaurantService.findRestaurant(nit);
-            successMessage("Funciono"+objRestaurant.getAtrNitRest(), "Atencion");
-            txtNitRest.setText("");
-        }
-        catch(Exception ex)
-        {
-           successMessage(ex.getMessage(), "Atencion"); 
-        }
-                
-    }//GEN-LAST:event_btnBuscarRestActionPerformed
-
+/**/
     /**
      * @param args the command line arguments
      */
@@ -297,30 +230,55 @@ public class GUIRegistrationRest extends javax.swing.JFrame {
     {
         txtAddressRest.setText("");
         txtEmailRest.setText("");
-        txtIdAdminRest.setText("");
+        //txtIdAdminRest.setText("");
         txtMobileRest.setText("");
         txtNameRest.setText("");
         txtNitRest.setText("");   
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscarRest;
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnRegistrarRest;
-    private javax.swing.JLabel jLbLogo;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private java.awt.Label lblAddressRest;
+    private javax.swing.JLabel lblCheckIn;
+    private javax.swing.JLabel lblCiudadRest;
     private java.awt.Label lblEmailRest;
-    private java.awt.Label lblIdAdminRest;
+    private javax.swing.JLabel lblFondo;
     private java.awt.Label lblMobileRest;
     private java.awt.Label lblNameRest;
     private java.awt.Label lblNitRest;
+    private javax.swing.JPanel pnlColorRegistrar;
     private javax.swing.JPanel pnlRegistroRest;
-    private java.awt.TextField txtAddressRest;
-    private java.awt.TextField txtEmailRest;
-    private java.awt.TextField txtIdAdminRest;
-    private java.awt.TextField txtMobileRest;
-    private java.awt.TextField txtNameRest;
-    private java.awt.TextField txtNitRest;
+    private javax.swing.JTextField txtAddressRest;
+    private javax.swing.JTextField txtCiudad;
+    private javax.swing.JTextField txtEmailRest;
+    private javax.swing.JTextField txtMobileRest;
+    private javax.swing.JTextField txtNameRest;
+    private javax.swing.JTextField txtNitRest;
     // End of variables declaration//GEN-END:variables
 
+ private void initIcons() {
     
+    
+        addIcon(lblFondo, "src/main/java/resource/fondo.png");
+        addIcon(lblCheckIn, "src/main/java/resource/check.png");
+        //addIcon(lblLupa, "src/main/java/resource/buscar.png");
+       // addIcon(lblMas, "src/main/java/resource/registrar.png");
+    }
+    private void addIcon(JLabel lb, String pathIcon) 
+    {
+        ImageIcon img = new ImageIcon(pathIcon);
+        Icon icono = new ImageIcon(img.getImage().getScaledInstance(
+                lb.getWidth(),
+                lb.getHeight(),
+                Image.SCALE_DEFAULT));
+        lb.setIcon(icono);
+        this.repaint();
+    }   
 }

@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  */
 public class RestaurantSocket {
       /**
-     * Socket de la aplicación Restaurante
+     * Socket de la aplicación cliente
      */
     private java.net.Socket socket = null;
     /**

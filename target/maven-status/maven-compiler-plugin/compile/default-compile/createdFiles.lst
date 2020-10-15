@@ -1,0 +1,15 @@
+co\unicauca\restaurantathand\client\access\IRestaurantAccess.class
+co\unicauca\restaurantathand\client\presentation\GUIRegistrationRest$1.class
+co\unicauca\restaurantathand\client\presentation\GUIRLoginRest.class
+co\unicauca\restaurantathand\client\presentation\GUIRLoginRest$1.class
+co\unicauca\restaurantathand\client\presentation\GUIRegistrarCustomer.class
+co\unicauca\restaurantathand\client\domain\User.class
+co\unicauca\restaurantathand\client\presentation\GUIRLoginRest$2.class
+co\unicauca\restaurantathand\client\access\RestaurantAccessImplSockets.class
+co\unicauca\restaurantathand\client\domain\services\RestaurantService.class
+co\unicauca\restaurantathand\client\presentation\GUIRegistrationRest.class
+co\unicauca\restaurantathand\client\infra\Messages.class
+co\unicauca\restaurantathand\client\presentation\GUIRegistrarCustomer$1.class
+co\unicauca\restaurantathand\client\presentation\GUIRegistrationRest$2.class
+co\unicauca\restaurantathand\client\access\Factory.class
+co\unicauca\restaurantathand\client\infra\RestaurantSocket.class

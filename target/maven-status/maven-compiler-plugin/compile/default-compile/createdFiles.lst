@@ -2,6 +2,7 @@ co\unicauca\restaurantathand\client\access\IRestaurantAccess.class
 co\unicauca\restaurantathand\client\presentation\GUIRegistrationRest$1.class
 co\unicauca\restaurantathand\client\presentation\GUIRLoginRest.class
 co\unicauca\restaurantathand\client\presentation\GUIRLoginRest$1.class
+co\unicauca\restaurantathand\client\infra\DishSocket.class
 co\unicauca\restaurantathand\client\presentation\GUIRegistrarCustomer.class
 co\unicauca\restaurantathand\client\domain\User.class
 co\unicauca\restaurantathand\client\presentation\GUIRLoginRest$2.class

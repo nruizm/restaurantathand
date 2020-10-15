@@ -27,13 +27,8 @@ public class GUIRegistrationRest extends javax.swing.JFrame {
     public GUIRegistrationRest() {
         initComponents();
         setLocationRelativeTo(null);
-        ImageIcon img = new ImageIcon("src/main/java/resource/bg2.png");
-        Icon icono = new ImageIcon(img.getImage().getScaledInstance(
-                jLbLogo.getWidth(),
-                jLbLogo.getHeight(),
-                Image.SCALE_AREA_AVERAGING));
-        jLbLogo.setIcon(icono);
-        this.repaint();  
+        initIcons();
+        
     }
 
     /**

@@ -1,7 +1,7 @@
 package co.unicauca.restaurantathand.client.access;
 
 import co.unicauca.restaurantathand.client.infra.RestaurantSocket;
-import co.unicauca.restaurantathand.commons.domain.Dish;
+import co.unicauca.restaurantathand.commons.domain.Menu;
 import co.unicauca.restaurantathand.commons.infra.JsonError;
 import co.unicauca.restaurantathand.commons.infra.Protocol;
 import com.google.gson.Gson;
@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Servicio de Platos. Permite hacer el CRUD de Platos solicitando los
+ * Servicio de Menu. Permite hacer el CRUD de Platos solicitando los
  * servicios con la aplicación server. Maneja los errores devueltos
  * 
  * @author Mannuel Fernando Granoble
@@ -18,30 +18,29 @@ import java.util.logging.Logger;
  *         Ximena Quijano Gutierrez
  *         Nathalia Ruiz Menses
  */
-public class DishAccessImplSockets implements IDishAccess{
-
-     /**
+public class MenuAccessImplSockets implements IMenuAccess{
+  /**
      * El servicio utiliza un socket para comunicarse con la aplicación server
      */
     private RestaurantSocket mySocket;
     
-    public DishAccessImplSockets ()
+    public MenuAccessImplSockets ()
     {
         mySocket = new RestaurantSocket();
     }
     
     /**
-     * Busca un Plato. Utiliza socket para pedir el servicio al servidor
+     * Busca un Menu. Utiliza socket para pedir el servicio al servidor
      *
-     * @param prmIdDish Id del plato
-     * @return Objeto Plato
+     * @param prmIdMenu Id del Menu
+     * @return Objeto Menu
      * @throws Exception cuando no pueda conectarse con el servidor
      */
     
     @Override  
-    public Dish findDish(String prmIdDish) throws Exception {
+     public Menu findMenu(String prmIdMenu) throws Exception {
         String jsonResponse = null;
-        String requestJson = findDishRequestJson(prmIdDish);
+        String requestJson = findMenuRequestJson(prmIdMenu);
         try {
             mySocket.connect();
             jsonResponse = mySocket.sendStream(requestJson);
@@ -49,19 +48,19 @@ public class DishAccessImplSockets implements IDishAccess{
             mySocket.disconnect();
 
         } catch (IOException ex) {
-            Logger.getLogger(DishAccessImplSockets.class.getName()).log(Level.SEVERE, "No hubo conexión con el servidor", ex);
+            Logger.getLogger(MenuAccessImplSockets.class.getName()).log(Level.SEVERE, "No hubo conexión con el servidor", ex);
         }
         if (jsonResponse == null) {
             throw new Exception("No se pudo conectar con el servidor. Revise la red o que el servidor esté escuchando. ");
         } else {
             if (jsonResponse.contains("error")) {
                 //Devolvió algún error
-                Logger.getLogger(DishAccessImplSockets.class.getName()).log(Level.INFO, jsonResponse);
+                Logger.getLogger(MenuAccessImplSockets.class.getName()).log(Level.INFO, jsonResponse);
                 throw new Exception(extractMessages(jsonResponse));
             } else {
-                //Encontró el Plato
-                Dish varDish = jsonToDish(jsonResponse);
-                return varDish;
+                //Encontró el menu
+                Menu menu = jsonToMenu(jsonResponse);
+                return menu;
             }
         }
     }
@@ -69,27 +68,29 @@ public class DishAccessImplSockets implements IDishAccess{
     /**
      * Crea una solicitud json para ser enviada por el socket
      *
-     * @param prmIdDish identificación del plato
-     * @return solicitud de consulta del cliente en formato Json, algo como:
-     * {"resource":dish","action":"get","parameters":[{"name":"id","value":"98000001"}]}
+     * @param prmIdMenu identificación del Menu
+     * @return solicitud de consulta del menu en formato Json, algo como:
+     * {"resource":menu","action":"get","parameters":[{"name":"id","value":"98000001"}]}
      */
-    private String findDishRequestJson(String prmIdDish) {
+    private String findMenuRequestJson(String prmIdMenu) {
 
         Protocol protocol = new Protocol();
-        protocol.setResource("maindish");
+        protocol.setResource("menu");
         protocol.setAction("get");
-        protocol.addParameter("id_dish", prmIdDish);
+        protocol.addParameter("idmenu", prmIdMenu);
 
         Gson gson = new Gson();
         String requestJson = gson.toJson(protocol);
 
         return requestJson;
     }
+    
+    
     @Override
-    public String createDish(Dish prmDish) throws Exception  
+    public String createMenu(Menu prmMenu) throws Exception  
     {
         String jsonResponse = null;
-        String requestJson = createDishRequestJson(prmDish);
+        String requestJson = createMenuRequestJson(prmMenu);
         try {
             mySocket.connect();
             jsonResponse = mySocket.sendStream(requestJson);
@@ -108,32 +109,32 @@ public class DishAccessImplSockets implements IDishAccess{
                 Logger.getLogger(DishAccessImplSockets.class.getName()).log(Level.INFO, jsonResponse);
                 throw new Exception(extractMessages(jsonResponse));
             } else {
-                //Agregó correctamente, devuelve el Id del Dish
-                return prmDish.getAtrIdDish();
+                //Agregó correctamente, devuelve el Id de Menu 
+                return prmMenu.getAtrIdMenu();
             }
 
          }
     }
     
     /**
-     * Crea la solicitud json de creación del Plato para ser enviado por el
+     * Crea la solicitud json de creación del Menu para ser enviado por el
      * socket
      *
-     * @param prmDish objeto Plato
+     * @param prmMenu objeto Menu
      * @return devulve algo como:
-     * {"resource":"dish","action":"post","parameters":[{"name":"iddish","value":"980000012"},{"name":"namedish","value":"Carne"},...}]}
+     * {"resource":"menu","action":"post","parameters":[{"name":"idmenu","value":"980000012"},{"name":"namemenu","value":"Carne"},...}]}
      */
     
-     private String createDishRequestJson (Dish prmDish) {
+     private String createMenuRequestJson (Menu prmMenu) {
 
         Protocol protocol = new Protocol();
-        protocol.setResource("dish");
+        protocol.setResource("menu");
         protocol.setAction("post");
-        protocol.addParameter("iddish", prmDish.getAtrIdDish());
-        protocol.addParameter("namedish", prmDish.getAtrNameDish());
-        protocol.addParameter("descriptiondish", prmDish.getAtrDescriptionDish());
-        protocol.addParameter("pricedish", prmDish.getAtrPriceDish()+"");
-        protocol.addParameter("typedish", prmDish.getAtrTypeDish());
+        protocol.addParameter("idmenu", prmMenu.getAtrIdMenu());
+        protocol.addParameter("nameMenu", prmMenu.getAtrNomMenu());
+        protocol.addParameter("fechamenu", prmMenu.getAtrFecVimenu() + "");
+        protocol.addParameter("typemenu", prmMenu.getAtrTypeMenu());
+        
         
         Gson gson = new Gson();
         String requestJson = gson.toJson(protocol);
@@ -168,17 +169,19 @@ public class DishAccessImplSockets implements IDishAccess{
     }
     
      /**
-     * Convierte jsonDish, proveniente del server socket, de json a un
-     * objeto Dish
+     * Convierte jsonMenu, proveniente del server socket, de json a un
+     * objeto Menu
      *
-     * @param jsonDish objeto Plato en formato json
+     * @param jsonMenu objeto Menu en formato json
      */
-    private Dish jsonToDish(String jsonDish) {
+    private Menu jsonToMenu(String jsonMenu) {
 
         Gson gson = new Gson();
-        Dish varDish = gson.fromJson(jsonDish, Dish.class);
+        Menu varMenu = gson.fromJson(jsonMenu, Menu.class);
 
-        return varDish;
+        return varMenu;
 
     }
+
+   
 }

@@ -30,7 +30,7 @@ public class GUIRTipoPer extends javax.swing.JFrame {
         pnlTipoPers = new javax.swing.JPanel();
         lblImgUser = new javax.swing.JLabel();
         btnAdmin = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnUser = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,12 +43,22 @@ public class GUIRTipoPer extends javax.swing.JFrame {
         btnAdmin.setForeground(new java.awt.Color(102, 102, 102));
         btnAdmin.setText("Admin");
         btnAdmin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminActionPerformed(evt);
+            }
+        });
 
-        jButton1.setBackground(new java.awt.Color(76, 174, 235));
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(102, 102, 102));
-        jButton1.setText("User");
-        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnUser.setBackground(new java.awt.Color(76, 174, 235));
+        btnUser.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnUser.setForeground(new java.awt.Color(102, 102, 102));
+        btnUser.setText("User");
+        btnUser.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUserActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlTipoPersLayout = new javax.swing.GroupLayout(pnlTipoPers);
         pnlTipoPers.setLayout(pnlTipoPersLayout);
@@ -60,7 +70,7 @@ public class GUIRTipoPer extends javax.swing.JFrame {
                         .addGap(121, 121, 121)
                         .addGroup(pnlTipoPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(btnUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnlTipoPersLayout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(lblImgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -72,7 +82,7 @@ public class GUIRTipoPer extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblImgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnUser, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(55, Short.MAX_VALUE))
@@ -92,15 +102,29 @@ public class GUIRTipoPer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
+       GUIRListarRestaurant gp = new GUIRListarRestaurant();
+        gp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnUserActionPerformed
+
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
+       GUIROpciones gpa = new GUIROpciones();
+        gpa.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAdminActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+    /**
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -120,6 +144,7 @@ public class GUIRTipoPer extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+    
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUIRTipoPer().setVisible(true);
@@ -129,7 +154,7 @@ public class GUIRTipoPer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdmin;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnUser;
     private javax.swing.JLabel lblImgUser;
     private javax.swing.JPanel pnlTipoPers;
     // End of variables declaration//GEN-END:variables

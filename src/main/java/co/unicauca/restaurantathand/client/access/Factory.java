@@ -61,7 +61,7 @@ public class Factory {
     public IDishAccess getDishService() {
 
         IDishAccess result = null;
-        String type = Utilities.loadProperty("dish.service");
+        String type = Utilities.loadProperty("customer.service");
 
         switch (type) {
             case "default":
@@ -71,5 +71,22 @@ public class Factory {
 
         return result;
 
+    }
+    
+    /**
+     * Método que crea una instancia concreta de la jerarquia IUserAccess
+     *
+     * @return una clase hija de la abstracción IRepositorioUser
+     */
+    public IPersonAccess getUserService() {
+        IPersonAccess result = null;
+        String type = Utilities.loadProperty("customer.service");
+
+        switch (type) {
+            case "default":
+                result = new PersonAccessImplSockets();
+                break;
+        }
+        return result;
     }
 }

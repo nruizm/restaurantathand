@@ -60,8 +60,8 @@ public class RestaurantAccessImplSockets implements IRestaurantAccess{
                 Logger.getLogger(RestaurantAccessImplSockets.class.getName()).log(Level.INFO, jsonResponse);
                 throw new Exception(extractMessages(jsonResponse));
             } else {
-                //Encontró el customer
-                Restaurant restaurant = jsonToCustomer(jsonResponse);
+                //Encontró el Restaurant
+                Restaurant restaurant = jsonToRestaurant(jsonResponse);
                 return restaurant;
             }
         }
@@ -74,11 +74,13 @@ public class RestaurantAccessImplSockets implements IRestaurantAccess{
         Protocol protocol = new Protocol();
         protocol.setResource("restaurant");
         protocol.setAction("post");
-        protocol.addParameter("Nit: ", prmRestaurant.getAtrNitRest());
-        protocol.addParameter("Nombre: ", prmRestaurant.getAtrNameRest());
-        protocol.addParameter("Direccion: ", prmRestaurant.getAtrAddressRest());
-        protocol.addParameter("Telefono: ", prmRestaurant.getAtrMobileRest());
-        protocol.addParameter("Email: ", prmRestaurant.getAtrEmailRest());
+        protocol.addParameter("nitRest", prmRestaurant.getAtrNitRest());
+        protocol.addParameter("usernameper", prmRestaurant.getAtrAdmiRest());
+        protocol.addParameter("namerest", prmRestaurant.getAtrNameRest());
+        protocol.addParameter("addressrest", prmRestaurant.getAtrAddressRest());
+        protocol.addParameter("phonerest", prmRestaurant.getAtrMobileRest());
+        protocol.addParameter("Email", prmRestaurant.getAtrEmailRest());
+        protocol.addParameter("cityrest", prmRestaurant.getAtrCityRest());
         //protocol.addParameter("Id Administrador", prmRestaurant.getAtrAdminRest().getAtrIdentificationAdm());
 
         Gson gson = new Gson();
@@ -120,10 +122,10 @@ public class RestaurantAccessImplSockets implements IRestaurantAccess{
         return error;
     }
     
-    private Restaurant jsonToCustomer(String jsonCustomer) {
+    private Restaurant jsonToRestaurant(String jsonRestaurant) {
 
         Gson gson = new Gson();
-        Restaurant restaurant = gson.fromJson(jsonCustomer, Restaurant.class);
+        Restaurant restaurant = gson.fromJson(jsonRestaurant, Restaurant.class);
 
         return restaurant;
 

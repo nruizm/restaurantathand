@@ -1,11 +1,24 @@
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\infra\DishSocket.java
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\presentation\GUIRegistrarCustomer.java
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\RestaurantAccessImplSockets.java
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\infra\RestaurantSocket.java
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\IRestaurantAccess.java
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\Factory.java
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\presentation\GUIRLoginRest.java
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\infra\Messages.java
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\presentation\GUIRegistrationRest.java
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\domain\services\RestaurantService.java
-C:\Users\lenovo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\domain\User.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\presentation\GUIRegistrarCustomer.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\presentation\GUIRTipoPer.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\RestaurantAccessImplSockets.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\infra\RestaurantSocket.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\domain\services\PersonService.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\domain\services\DishService.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\presentation\GUIRegistroMenu.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\MenuAccessImplSockets.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\IPersonAccess.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\IRestaurantAccess.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\presentation\GUIRListarRestaurant.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\infra\PersonSocket.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\Factory.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\presentation\GUIRLoginRest.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\presentation\GUIRegistrationRest.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\IDishAccess.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\domain\services\MenuService.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\domain\services\RestaurantService.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\domain\User.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\infra\Messages.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\PersonAccessImplSockets.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\presentation\GUIROpciones.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\IMenuAccess.java
+C:\Users\Michelle Vallejo\Documents\NetBeansProjects\restaurantathandClient\src\main\java\co\unicauca\restaurantathand\client\access\DishAccessImplSockets.java

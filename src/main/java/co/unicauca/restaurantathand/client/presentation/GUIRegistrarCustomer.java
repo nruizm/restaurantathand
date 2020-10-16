@@ -5,6 +5,11 @@
  */
 package co.unicauca.restaurantathand.client.presentation;
 
+import co.unicauca.restaurantathand.client.access.Factory;
+import co.unicauca.restaurantathand.client.access.IPersonAccess;
+import co.unicauca.restaurantathand.client.domain.services.PersonService;
+import static co.unicauca.restaurantathand.client.infra.Messages.successMessage;
+import co.unicauca.restaurantathand.commons.domain.Person;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -137,6 +142,11 @@ public class GUIRegistrarCustomer extends javax.swing.JFrame {
         txtTypeCust.setBorder(null);
 
         btnRegistrarCust.setText("Check In");
+        btnRegistrarCust.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarCustActionPerformed(evt);
+            }
+        });
 
         txtLastNameCust.setBorder(null);
 
@@ -269,16 +279,46 @@ public class GUIRegistrarCustomer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRegistrarCustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCustActionPerformed
+        
+        IPersonAccess service = Factory.getInstance().getUserService();
+        //Inyecta la dependencia
+
+        PersonService userService = new PersonService(service);
+
+        Person user = new Person();
+        user.setAtrUserName(txtUserNameCust.getText());
+        user.setAtrIdentification(txtIdCust.getText());
+        user.setAtrName(txtNameCust.getText());
+        user.setAtrLastName(txtLastNameCust.getText());
+        user.setAtrPassword(txtPasswordCust.getText());
+        user.setAtrCity(txtCityCust.getText());
+        user.setAtrAddress(txtAddressCust.getText());
+        user.setAtrPhone(txtPhoneCust.getText());
+        user.setAtrType(txtTypeCust.getText());
+        try {
+            String response = userService.createUser(user);
+            successMessage("Usuario " + response + " agregado con exito.", "Atención");
+            txtUserNameCust.setText("");
+        } catch (Exception ex) {
+            System.out.println(ex);
+            successMessage(ex.getMessage() + "Error", "Atención");
+
+        }
+    }//GEN-LAST:event_btnRegistrarCustActionPerformed
+
+
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+/**        try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -295,15 +335,16 @@ public class GUIRegistrarCustomer extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(GUIRegistrarCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+ 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUIRegistrarCustomer().setVisible(true);
             }
         });
     }
-
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtrasCus;
     private javax.swing.JButton btnRegistrarCust;

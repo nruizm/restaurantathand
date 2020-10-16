@@ -5,6 +5,11 @@
  */
 package co.unicauca.restaurantathand.client.presentation;
 
+import co.unicauca.restaurantathand.client.access.Factory;
+import co.unicauca.restaurantathand.client.access.IRestaurantAccess;
+import co.unicauca.restaurantathand.client.domain.services.RestaurantService;
+import static co.unicauca.restaurantathand.client.infra.Messages.successMessage;
+import co.unicauca.restaurantathand.commons.domain.Restaurant;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -119,6 +124,11 @@ public class GUIRegistrationRest extends javax.swing.JFrame {
         btnCheckInRest.setBackground(new java.awt.Color(102, 102, 102));
         btnCheckInRest.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnCheckInRest.setText("Check in");
+        btnCheckInRest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheckInRestActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -220,15 +230,45 @@ public class GUIRegistrationRest extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCheckInRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckInRestActionPerformed
+        IRestaurantAccess service = Factory.getInstance().getRestaurantService();
+        //Inyecta la dependencia
+        
+        RestaurantService restaurantService = new RestaurantService(service);
+        
+        Restaurant restaurant = new Restaurant();
+        restaurant.setAtrNitRest(txtNitRest.getText());
+        restaurant.setAtrAdmiRest("mfgranoble"); //Valor quemado (Se va a validar )
+        restaurant.setAtrNameRest(txtNameRest.getText());
+        restaurant.setAtrAddressRest(txtAddressRest.getText());
+        restaurant.setAtrEmailRest(txtEmailRest.getText());
+        restaurant.setAtrCityRest(txtCityRest.getText());
+        restaurant.setAtrMobileRest(txtPhoneRest.getText());
+        
+        try{
+            String response = restaurantService.createRestaurant(restaurant);
+            successMessage("Restaurant" + response + "agregado con exito","Atencion");
+            txtNitRest.setText("");
+        }catch (Exception ex ){
+            System.out.println(ex);
+            successMessage(ex.getMessage() + "Error", "Atencion");
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnCheckInRestActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+    /**
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -248,6 +288,7 @@ public class GUIRegistrationRest extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUIRegistrationRest().setVisible(true);

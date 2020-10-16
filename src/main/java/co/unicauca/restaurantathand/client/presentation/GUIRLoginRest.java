@@ -45,8 +45,8 @@ public class GUIRLoginRest extends javax.swing.JFrame
         pnlColorLogin = new javax.swing.JPanel();
         lblLogoRest = new javax.swing.JLabel();
         pnlLoginRest = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtUser = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
         lblUserRest = new javax.swing.JLabel();
         lblPassRest = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
@@ -84,11 +84,11 @@ public class GUIRLoginRest extends javax.swing.JFrame
         pnlLoginRest.setBackground(new java.awt.Color(255, 255, 255));
         pnlLoginRest.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBorder(null);
-        pnlLoginRest.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 200, 20));
+        txtUser.setBorder(null);
+        pnlLoginRest.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 200, 20));
 
-        jTextField2.setBorder(null);
-        pnlLoginRest.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 200, 20));
+        txtPassword.setBorder(null);
+        pnlLoginRest.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 200, 20));
 
         lblUserRest.setForeground(new java.awt.Color(102, 102, 102));
         pnlLoginRest.add(lblUserRest, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 50, 50));
@@ -100,6 +100,11 @@ public class GUIRLoginRest extends javax.swing.JFrame
         btnLogin.setBackground(new java.awt.Color(76, 110, 235));
         btnLogin.setText("Enter");
         btnLogin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
         pnlLoginRest.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 90, 30));
         pnlLoginRest.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 200, 10));
         pnlLoginRest.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 200, -1));
@@ -133,8 +138,23 @@ public class GUIRLoginRest extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
+       GUIRegistrarCustomer gpa = new GUIRegistrarCustomer();
+        gpa.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+       if(txtUser.getText().equalsIgnoreCase("invitado")){
+                    GUIRListarRestaurant gp = new GUIRListarRestaurant();
+                    //gp.setExtendedState(MAXIMIZED_BOTH);
+                    gp.setVisible(true);
+        } 
+        
+        GUIRTipoPer gopc = new GUIRTipoPer();
+        //gopc.setExtendedState(MAXIMIZED_BOTH);
+        gopc.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,8 +197,6 @@ public class GUIRLoginRest extends javax.swing.JFrame
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblLogoRest;
     private javax.swing.JLabel lblPassRest;
     private javax.swing.JLabel lblRecoverPass;
@@ -186,6 +204,8 @@ public class GUIRLoginRest extends javax.swing.JFrame
     private javax.swing.JLabel lblUserRest;
     private javax.swing.JPanel pnlColorLogin;
     private javax.swing.JPanel pnlLoginRest;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
    
 private void initIcons() {

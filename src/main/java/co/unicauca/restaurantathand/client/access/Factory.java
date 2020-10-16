@@ -3,7 +3,9 @@ package co.unicauca.restaurantathand.client.access;
 import co.unicauca.restaurantathand.commons.infra.Utilities;
 
 /**
- *
+ * Fabrica que se encarga de instanciar RestaurantAccess o cualquier
+ * otro que se cree en el futuro.
+ * 
  * @author Mannuel Fernando Granoble
  *         Michel Andrea Gutierrez Vallejo
  *         Ximena Quijano Gutierrez
@@ -32,9 +34,9 @@ public class Factory {
     }
 
     /**
-     * Método que crea una instancia concreta de la jerarquia ICustomerService
+     * Método que crea una instancia concreta de la jerarquia IRestaurantAccess
      *
-     * @return una clase hija de la abstracción IRepositorioClientes
+     * @return una clase hija de la abstracción IRepositorioRestaurantes
      */
     public IRestaurantAccess getRestaurantService() {
 
@@ -44,6 +46,26 @@ public class Factory {
         switch (type) {
             case "default":
                 result = new RestaurantAccessImplSockets();
+                break;
+        }
+
+        return result;
+
+    }
+    
+    /**
+     * Método que crea una instancia concreta de la jerarquia IDishAccess
+     *
+     * @return una clase hija de la abstracción IRepositorioDish
+     */
+    public IDishAccess getDishService() {
+
+        IDishAccess result = null;
+        String type = Utilities.loadProperty("dish.service");
+
+        switch (type) {
+            case "default":
+                result = new DishAccessImplSockets();
                 break;
         }
 

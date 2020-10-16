@@ -5,6 +5,11 @@
  */
 package co.unicauca.restaurantathand.client.presentation;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Michelle Vallejo
@@ -16,6 +21,8 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
      */
     public GUIRegistroMenu() {
         initComponents();
+        setLocationRelativeTo(null);
+        initIcons();
     }
 
     /**
@@ -59,20 +66,22 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlValidateIdMenu.setBackground(new java.awt.Color(255, 255, 255));
+        pnlValidateIdMenu.setBackground(new java.awt.Color(255, 204, 204));
 
         lblIdMenuRest.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblIdMenuRest.setForeground(new java.awt.Color(102, 102, 102));
         lblIdMenuRest.setText("Identification:");
 
+        txtIdMenuRest.setBackground(new java.awt.Color(255, 204, 204));
         txtIdMenuRest.setBorder(null);
 
-        pnlRegistrarMenuRest.setBackground(new java.awt.Color(255, 255, 255));
+        pnlRegistrarMenuRest.setBackground(new java.awt.Color(255, 204, 204));
 
         lblNameMenuRest.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblNameMenuRest.setForeground(new java.awt.Color(102, 102, 102));
         lblNameMenuRest.setText("Name: ");
 
+        txtNameMenuRest.setBackground(new java.awt.Color(255, 204, 204));
         txtNameMenuRest.setBorder(null);
 
         lblDateMenuRest.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -128,8 +137,6 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        lblRegMenu.setText("Menu");
-
         btnSearchIdMenu.setText("Search");
 
         javax.swing.GroupLayout pnlValidateIdMenuLayout = new javax.swing.GroupLayout(pnlValidateIdMenu);
@@ -145,7 +152,6 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlValidateIdMenuLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(pnlValidateIdMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pnlRegistrarMenuRest, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlValidateIdMenuLayout.createSequentialGroup()
                                 .addComponent(lblIdMenuRest)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -154,7 +160,10 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
                                     .addComponent(txtIdMenuRest, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnSearchIdMenu)
-                                .addContainerGap())))))
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlValidateIdMenuLayout.createSequentialGroup()
+                                .addComponent(pnlRegistrarMenuRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40))))))
         );
         pnlValidateIdMenuLayout.setVerticalGroup(
             pnlValidateIdMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,14 +178,12 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
                         .addComponent(btnSearchIdMenu)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlRegistrarMenuRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66))
+                .addGap(71, 71, 71))
         );
 
         getContentPane().add(pnlValidateIdMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 290, 360));
-
-        lblRegistrar.setText("Registrar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -191,23 +198,23 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 60));
 
-        pnlValidateIdDish.setBackground(new java.awt.Color(255, 255, 255));
-
-        lblRegDish.setText("Plato");
+        pnlValidateIdDish.setBackground(new java.awt.Color(204, 255, 204));
 
         lblIdDish.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblIdDish.setForeground(new java.awt.Color(102, 102, 102));
         lblIdDish.setText("Identification:");
 
+        txtIdDishRes.setBackground(new java.awt.Color(204, 255, 204));
         txtIdDishRes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtIdDishRes.setBorder(null);
 
-        pnlRegistrarPlatp.setBackground(new java.awt.Color(255, 255, 255));
+        pnlRegistrarPlatp.setBackground(new java.awt.Color(204, 255, 204));
 
         lblNameDish.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblNameDish.setForeground(new java.awt.Color(102, 102, 102));
         lblNameDish.setText("Name:");
 
+        txtNameDish.setBackground(new java.awt.Color(204, 255, 204));
         txtNameDish.setBorder(null);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -238,7 +245,7 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(cbxTypeDishRes, 0, 1, Short.MAX_VALUE))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         pnlRegistrarPlatpLayout.setVerticalGroup(
             pnlRegistrarPlatpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +262,7 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
                     .addComponent(cbxTypeDishRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(jButton1)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         btnSearchIdPlato.setText("Search");
@@ -264,9 +271,6 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
         pnlValidateIdDish.setLayout(pnlValidateIdDishLayout);
         pnlValidateIdDishLayout.setHorizontalGroup(
             pnlValidateIdDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlValidateIdDishLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(pnlRegistrarPlatp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnlValidateIdDishLayout.createSequentialGroup()
                 .addGroup(pnlValidateIdDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlValidateIdDishLayout.createSequentialGroup()
@@ -280,8 +284,11 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
                         .addComponent(btnSearchIdPlato))
                     .addGroup(pnlValidateIdDishLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(lblRegDish, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addComponent(lblRegDish, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlValidateIdDishLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pnlRegistrarPlatp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlValidateIdDishLayout.setVerticalGroup(
             pnlValidateIdDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,9 +302,9 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
                     .addComponent(btnSearchIdPlato))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlRegistrarPlatp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlValidateIdDish, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 290, 360));
@@ -370,4 +377,21 @@ public class GUIRegistroMenu extends javax.swing.JFrame {
     private javax.swing.JTextField txtNameDish;
     private javax.swing.JTextField txtNameMenuRest;
     // End of variables declaration//GEN-END:variables
+private void initIcons() {
+    
+    
+        addIcon(lblRegistrar, "src/main/java/resource/registrarmenu.png");
+        addIcon(lblRegMenu, "src/main/java/resource/menu.png");
+        addIcon(lblRegDish, "src/main/java/resource/logoDish.png");
+       
+    }
+    private void addIcon(JLabel lb, String pathIcon) {
+        ImageIcon img = new ImageIcon(pathIcon);
+        Icon icono = new ImageIcon(img.getImage().getScaledInstance(
+                lb.getWidth(),
+                lb.getHeight(),
+                Image.SCALE_DEFAULT));
+        lb.setIcon(icono);
+        this.repaint();
+    }
 }

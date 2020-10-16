@@ -5,6 +5,11 @@
  */
 package co.unicauca.restaurantathand.client.presentation;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Michelle Vallejo
@@ -16,6 +21,8 @@ public class GUIRListarRestaurant extends javax.swing.JFrame {
      */
     public GUIRListarRestaurant() {
         initComponents();
+        setLocationRelativeTo(null);
+        initIcons();
     }
 
     /**
@@ -39,7 +46,7 @@ public class GUIRListarRestaurant extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblListarRest = new javax.swing.JTable();
         lblCity = new javax.swing.JLabel();
         lblLocation = new javax.swing.JLabel();
 
@@ -65,8 +72,6 @@ public class GUIRListarRestaurant extends javax.swing.JFrame {
             .addComponent(lblLogoRest, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
         );
 
-        lblLogo.setText("Logo");
-
         lblListName.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblListName.setForeground(new java.awt.Color(102, 102, 102));
         lblListName.setText("Name:");
@@ -79,18 +84,18 @@ public class GUIRListarRestaurant extends javax.swing.JFrame {
         lblListLocation.setForeground(new java.awt.Color(102, 102, 102));
         lblListLocation.setText("Location:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblListarRest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nit", "Name", "Address", "Email", "City"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblListarRest);
 
         javax.swing.GroupLayout pnlListarRestLayout = new javax.swing.GroupLayout(pnlListarRest);
         pnlListarRest.setLayout(pnlListarRestLayout);
@@ -104,7 +109,7 @@ public class GUIRListarRestaurant extends javax.swing.JFrame {
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlListarRestLayout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(pnlListarRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlListarRestLayout.createSequentialGroup()
@@ -134,10 +139,7 @@ public class GUIRListarRestaurant extends javax.swing.JFrame {
         pnlListarRestLayout.setVerticalGroup(
             pnlListarRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlListarRestLayout.createSequentialGroup()
-                .addGroup(pnlListarRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlListarRestLayout.createSequentialGroup()
-                        .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66))
+                .addGroup(pnlListarRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlListarRestLayout.createSequentialGroup()
                         .addComponent(pnlLogoRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -155,10 +157,13 @@ public class GUIRListarRestaurant extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(pnlListarRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblListLocation)
-                            .addComponent(lblLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)))
+                            .addComponent(lblLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlListarRestLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(68, Short.MAX_VALUE))
         );
@@ -209,7 +214,6 @@ public class GUIRListarRestaurant extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblListCity;
     private javax.swing.JLabel lblListLocation;
@@ -219,5 +223,23 @@ public class GUIRListarRestaurant extends javax.swing.JFrame {
     private javax.swing.JLabel lblLogoRest;
     private javax.swing.JPanel pnlListarRest;
     private javax.swing.JPanel pnlLogoRest;
+    private javax.swing.JTable tblListarRest;
     // End of variables declaration//GEN-END:variables
+private void initIcons() {
+    
+    
+        addIcon(lblLogoRest, "src/main/java/resource/listrestaurant.png");
+        addIcon(lblLogo, "src/main/java/resource/logorestaurantes.png");
+        
+       
+    }
+    private void addIcon(JLabel lb, String pathIcon) {
+        ImageIcon img = new ImageIcon(pathIcon);
+        Icon icono = new ImageIcon(img.getImage().getScaledInstance(
+                lb.getWidth(),
+                lb.getHeight(),
+                Image.SCALE_DEFAULT));
+        lb.setIcon(icono);
+        this.repaint();
+    }
 }

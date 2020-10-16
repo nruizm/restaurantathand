@@ -28,7 +28,7 @@
     <Container class="javax.swing.JPanel" name="pnlValidateIdMenu">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="cc" green="cc" red="ff" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -50,7 +50,6 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="pnlRegistrarMenuRest" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="lblIdMenuRest" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -61,6 +60,10 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnSearchIdMenu" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="pnlRegistrarMenuRest" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -83,9 +86,9 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="pnlRegistrarMenuRest" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -104,6 +107,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtIdMenuRest">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="ff" type="rgb"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -114,7 +120,7 @@
         <Container class="javax.swing.JPanel" name="pnlRegistrarMenuRest">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
@@ -186,6 +192,9 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtNameMenuRest">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -233,9 +242,6 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="lblRegMenu">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Menu"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnSearchIdMenu">
           <Properties>
@@ -265,16 +271,13 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblRegistrar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Registrar"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="pnlValidateIdDish">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="cc" green="ff" red="cc" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -286,10 +289,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="pnlRegistrarPlatp" max="32767" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -307,8 +306,12 @@
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="lblRegDish" min="-2" pref="202" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="pnlRegistrarPlatp" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -325,18 +328,15 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="pnlRegistrarPlatp" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblRegDish">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Plato"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblIdDish">
           <Properties>
@@ -351,6 +351,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtIdDishRes">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="ff" red="cc" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="12" style="0"/>
             </Property>
@@ -364,7 +367,7 @@
         <Container class="javax.swing.JPanel" name="pnlRegistrarPlatp">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="ff" red="cc" type="rgb"/>
             </Property>
           </Properties>
 
@@ -390,7 +393,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                      <EmptySpace pref="55" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -411,7 +414,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
+                      <EmptySpace pref="25" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -430,6 +433,9 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtNameDish">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>

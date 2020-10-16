@@ -100,7 +100,7 @@ public class GUIRLoginRest extends javax.swing.JFrame
         btnLogin.setBackground(new java.awt.Color(76, 110, 235));
         btnLogin.setText("Enter");
         btnLogin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        pnlLoginRest.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 263, 90, 30));
+        pnlLoginRest.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 90, 30));
         pnlLoginRest.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 200, 10));
         pnlLoginRest.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 200, -1));
 
